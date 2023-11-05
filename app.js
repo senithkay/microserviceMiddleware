@@ -59,6 +59,30 @@ app.use(
   })
 );
 
+// User Authentication
+app.use(
+  "/login",
+  createProxyMiddleware({
+    target: "https://localhost:7122/api/Auth",
+    changeOrigin: true,
+    pathRewrite: {
+      "^/login": "/",
+    },
+  })
+);
+
+// User Management
+app.use(
+  "/user",
+  createProxyMiddleware({
+    target: "https://localhost:7122/api/User",
+    changeOrigin: true,
+    pathRewrite: {
+      "^/user": "/",
+    },
+  })
+);
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
