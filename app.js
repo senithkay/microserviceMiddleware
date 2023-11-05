@@ -59,6 +59,40 @@ app.use(
   })
 );
 
+//
+app.use(
+  "/pastBills",
+  createProxyMiddleware({
+    target: "http://localhost:5775/pastBills",
+    changeOrigin: true,
+    pathRewrite: {
+      "^/pastBills": "/",
+    },
+  })
+);
+
+app.use(
+  "/allBills",
+  createProxyMiddleware({
+    target: "http://localhost:5775/allBills",
+    changeOrigin: true,
+    pathRewrite: {
+      "^/allBills": "/",
+    },
+  })
+);
+
+app.use(
+  "/currentBills",
+  createProxyMiddleware({
+    target: "http://localhost:5775/currentBills",
+    changeOrigin: true,
+    pathRewrite: {
+      "^/currentBills": "/",
+    },
+  })
+);
+
 // User Authentication
 app.use(
   "/login",
