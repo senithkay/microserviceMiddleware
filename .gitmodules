@@ -1,0 +1,9 @@
+[submodule "userManager"]
+	path = userManager
+	url = https://github.com/D-Naveenz/MicroServices.git
+[submodule "serviceManager"]
+	path = serviceManager
+	url = https://github.com/rusha-99/middleware.git
+[submodule "billingService"]
+	path = billingService
+	url = https://github.com/rusha-99/middleware.git
